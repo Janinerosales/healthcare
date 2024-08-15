@@ -62,7 +62,7 @@
                             <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
                             <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <div class="dropdown ms-3">
+                        {{-- <div class="dropdown ms-3">
                             <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
                             <div class="dropdown-menu rounded">
                                 <a href="#" class="dropdown-item">English</a>
@@ -71,7 +71,7 @@
                                 <a href="#" class="dropdown-item">Spanish</a>
                                 <a href="#" class="dropdown-item">Arabic</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -109,10 +109,10 @@
                             </div>
                         </div> -->
                         <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
-                        <div class="nav-btn px-3">
+                        {{-- <div class="nav-btn px-3">
                             <button class="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
                             <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Get a Quote</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="d-none d-xl-flex flex-shrink-0 ps-4">
