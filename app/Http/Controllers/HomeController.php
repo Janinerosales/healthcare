@@ -94,7 +94,7 @@ class HomeController extends Controller
     public function recordPatient(string $id)
     {
         $profile = Profile::findorFail($id);
-        return view('patientRole.recordPatient', compact('profile'));
+        return view('PatientRole.recordPatient', compact('profile'));
     }
 
     public function update(Request $request, string $id)
