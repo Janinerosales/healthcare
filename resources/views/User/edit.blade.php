@@ -84,6 +84,13 @@
               <input type="text" value="{{$user->address}}" name="address" class="form-control" id="exampleInputAddress" required>
             </div>
             <div class="mb-3">
+              <label for="exampleInputAddress" class="form-label">Phone Number</label>
+              <input type="number" value="{{$user->phone_number}}" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" id="exampleInputAddress" required>
+              @error('phone_number')
+              <p style="color: red">{{$message}} </p>
+              @enderror
+            </div>
+            <div class="mb-3">
               <label for="exampleInputAddress" class="form-label text-danger">User Email</label>
               <input type="text" value="{{$user->user->email}}" class="form-control" id="exampleInputAddress" readonly>
             </div>

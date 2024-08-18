@@ -102,6 +102,7 @@ class PatientController extends Controller
             'date_of_birth' => 'required',
             'gender' => 'required',
             'address' => 'required',
+            'phone_number' => 'required',
             'email' => 'required',
         ]);
 
@@ -144,3 +145,4 @@ class PatientController extends Controller
         return redirect()->route('patient.index')->with('delete', 'success');
     }
 }
+    

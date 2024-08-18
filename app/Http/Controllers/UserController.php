@@ -56,6 +56,7 @@ class UserController extends Controller
             'date_of_birth' => 'required',
             'gender' => 'required',
             'address' => 'required',
+            'phone_number' => 'required|max:11',
             'email' => 'required|unique:profiles',
         ]);
 

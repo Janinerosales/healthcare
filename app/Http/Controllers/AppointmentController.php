@@ -7,6 +7,7 @@ use App\Models\Profile;
 use App\Models\Appointment;
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AppointmentController extends Controller
 {
@@ -30,8 +31,8 @@ class AppointmentController extends Controller
                 $query->where('role_name', 'Doctor');
             })->simplePaginate(5);
 
-        return view('Patient.Appointment.create', compact('doctors'))->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+        return view ('Patient.Appointment.create', compact('doctors'))->with('i', (request()->input('page', 1) - 1) * 5);
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -69,6 +70,16 @@ class AppointmentController extends Controller
             'day' => $mytime->format('h:i:s A'),
             'message' => 'Add Appointment',
         ]);
+
+        // dd($data['profile_id']);
+        $profileNumber = Profile::findorFail($data['profile_id'])->phone_number;
+
+        // dd($profileNumber);
+        // Http::asForm()->post('https://api.semaphore.co/api/v4/messages', [
+        //     'apikey' => env('SMS_API_KEY'),
+        //     'number' => $profileNumber, 
+        //     'message' => 'You Have New Appointment',
+        //     ]);
         return redirect()->route('patient.edit', $data['profile_id'])->with('add_success', 'succeses');
     }
 

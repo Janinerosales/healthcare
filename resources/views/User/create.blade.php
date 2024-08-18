@@ -87,6 +87,13 @@
               <label for="exampleInputAddress" class="form-label">Address</label>
               <input type="text" value="{{old('address')}}" name="address" class="form-control" id="exampleInputAddress" required>
             </div>
+            <div class="mb-3">
+              <label for="exampleInputAddress" class="form-label">Phone Number</label>
+              <input type="number" value="{{old('phone_number')}}" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" id="exampleInputAddress" required>
+              @error('phone_number')
+              <p style="color:red">{{$message}}</p>
+              @enderror
+            </div>
             <div class="mb-3" id="specializationField" style="display: none;">
               <label for="exampleInputSpecialization" class="form-label">Specialization</label>
               <textarea value="{{old('specialization')}}" name="specialization" class="form-control" id="exampleInputSpecialization" placeholder="(optional)"></textarea>

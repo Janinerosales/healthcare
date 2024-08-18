@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>LifeSure - Life Insurance Website Template</title>
+    <title>Health Care Management System</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -50,7 +50,7 @@
                             <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
                         </div>
                         <div class="ps-3">
-                            <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
+                            <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>healthcare@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                     </a>
                     <div class="d-flex flex-column ms-3">
                         <span>Call to Our Experts</span>
-                        <a href="tel:+ 0123 456 7890"><span class="text-dark">Free: + 0123 456 7890</span></a>
+                        <a href="tel:+ 0123 456 7890"><span class="text-dark">09268261787</span></a>
                     </div>
                 </div>
             </nav>
@@ -160,9 +160,9 @@
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-7 animated fadeInLeft">
                             <div class="text-sm-center text-md-start">
-                                <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To LifeSure</h4>
-                                <h1 class="display-1 text-white mb-4">Life Insurance Makes You Happy</h1>
-                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy...
+                                <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To Lifesure</h4>
+                                <h1 class="display-1 text-white mb-4">Healthy Life Makes You Happy</h1>
+                                <p class="mb-5 fs-5">Keep calm and prioritize self-care.
                                 </p>
                                 <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
                                     <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="/login"> Login</a>

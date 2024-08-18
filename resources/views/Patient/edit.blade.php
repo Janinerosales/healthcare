@@ -84,6 +84,10 @@
               <input type="text" value="{{$profiles->address}}" name="address" class="form-control" id="exampleInputAddress" required>
             </div>
             <div class="mb-3">
+              <label for="exampleInputAddress" class="form-label">Phone Number</label>
+              <input type="number" value="{{$profiles->phone_number}}" name="phone_number" class="form-control" id="exampleInputAddress" required>
+            </div>
+            <div class="mb-3">
               <label for="exampleInputAddress" class="form-label text-danger">User Email</label>
               <input type="text" value="{{$profiles->user->email}}" class="form-control" id="exampleInputAddress" readonly>
             </div>
