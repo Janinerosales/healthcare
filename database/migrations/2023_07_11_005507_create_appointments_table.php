@@ -19,7 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnUpdate();
             $table->foreignIdFor(Profile::class)->nullable();
-            $table->foreignId('doctor_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('doctor_id')->nullable()->cascadeOnDelete();
             $table->string('requests')->nullable();
             $table->date('date_now')->default(now()->format('Y-m-d'));
             $table->integer('update')->default(0);
