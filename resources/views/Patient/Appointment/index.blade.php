@@ -112,6 +112,7 @@
 
                   @include('Prescription.create')
                   @endif
+                  
                   @else
                   <a href="#" class="btn btn-sm btn-danger me-2 mb-2" data-bs-toggle="modal" data-bs-target="#createPrescriptionModal{{$appointment->id}}">
                     <i class="fas fa-warning"></i>

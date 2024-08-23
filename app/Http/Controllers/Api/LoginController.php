@@ -41,7 +41,7 @@ class LoginController extends Controller
             $user->save();
 
 
-            //Mail Trap After
+            // // Mail Trap After
             // Http::asForm()->post(env('SEMAPHORE_API_URI'), [
             //     'apikey' => env('SEMAPHORE_API_KEY'),
             //     'number' => env('SMS_NUMBER'),

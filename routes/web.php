@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\statusController;
 use App\Http\Controllers\UserController;
+use App\Models\Doctor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+   $doctors =  Doctor::Paginate(5);
+    return view('welcome', compact('doctors'));
 });
 //Login
 Route::get('/login', [LoginController::class, 'login'])->name('login');

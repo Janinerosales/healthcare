@@ -27,7 +27,14 @@
           }
         }).then(response => response.json())
         .then(response => {
-          const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
+          let Uri = window.location.hostname;
+          if(response.profile_image){
+            document.getElementById('userID').innerHTML =  `<img  width="35" src={{asset('storage/${response.profile_image}')}} height="35" class="rounded-circle">`;
+          }else{
+            document.getElementById('userID').innerHTML =  `<img  width="35" src={{asset("images/profile_default.png")}} height="35" class="rounded-circle">`;
+          }
+          console.log(Uri);
+          // const userImage = `{{asset('${response.profile_image}')}}` ? `{{asset('${response.profile_image}')}}` : `{{asset('images/profile_default.png')}}`;
           if (response.role_id == 1) {
             document.getElementById('roleName').textContent = 'Admin';
           } else if (response.role_id == 2) {
@@ -36,7 +43,7 @@
             document.getElementById('roleName').textContent = 'Doctor';
           }
 
-          document.getElementById('userID').src = userImage;
+        
           if (response.role_id == 3) {
             document.getElementById('containerDoctor').innerHTML = `          <ul id="sidebarnav">
             <li class="nav-small-cap">
@@ -260,7 +267,8 @@
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
 
                   <h5 id="roleName" style="padding-right: 10px; color: blue"></h5>
-                  <img id="userID" width="35" height="35" class="rounded-circle">
+                  <div id="userID"></div>
+                 
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">

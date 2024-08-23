@@ -173,6 +173,12 @@ class UserController extends Controller
         //
         // dd($id);
         $profile = Profile::findorFail($id);
+       $ProfileID = $profile->pluck('user_id', 'id')->first();
+       $user = User::where('id', $ProfileID)->first();
+
+    //    dd($user);
+        // dd($user);
+        
         $data = $request->validate([
             'first_name' => 'required',
             'middle_name'   => 'required',
@@ -207,6 +213,11 @@ class UserController extends Controller
             ]);
         }
 
+
+
+        $user->update([
+            'profile_image' => $data['profile_image'] ?? null,
+        ]);
         $profile->update($data);
 
         // dd($data);

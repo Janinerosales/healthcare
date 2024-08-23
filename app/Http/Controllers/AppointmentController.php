@@ -75,11 +75,11 @@ class AppointmentController extends Controller
         $profileNumber = Profile::findorFail($data['profile_id'])->phone_number;
 
         // dd($profileNumber);
-        // Http::asForm()->post('https://api.semaphore.co/api/v4/messages', [
-        //     'apikey' => env('SMS_API_KEY'),
-        //     'number' => $profileNumber, 
-        //     'message' => 'You Have New Appointment',
-        //     ]);
+        Http::asForm()->post('https://api.semaphore.co/api/v4/messages', [
+            'apikey' => env('SMS_API_KEY'),
+            'number' => $profileNumber, 
+            'message' => 'You Have New Appointment',
+            ]);
         return redirect()->route('patient.edit', $data['profile_id'])->with('add_success', 'succeses');
     }
 

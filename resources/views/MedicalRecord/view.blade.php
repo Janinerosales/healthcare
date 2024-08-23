@@ -153,7 +153,7 @@
         <tbody>
           @foreach($profile->appointments as $appointment)
           <tr>
-            <td>{{$appointment->created_at}}</td>
+            <td>{{$appointment->created_at->format('M/d/Y H:i A' )}}</td>
             <td>{{$appointment->requests}}</td>
             <td>{{$appointment->prescription->medication ?? ''}}</td>
             <td>{{$appointment->prescription->description ?? ''}}</td>
