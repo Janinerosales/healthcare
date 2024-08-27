@@ -86,7 +86,7 @@ class UserController extends Controller
             'email' => $email,
             'password' => 'healthcare2024',
         ])->id;
-
+            
         $getRole =  Profile::create($data);
 
         $mytime = \Carbon\Carbon::now();
