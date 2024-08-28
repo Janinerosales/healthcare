@@ -74,7 +74,7 @@
       }
     }).then(response => response.json())
     .then(response => {
-      console.log(response.id);
+      // console.log(response.id);
       document.querySelectorAll('[id^="doctorID"]').forEach(element => {
         element.value = response.id;
       });

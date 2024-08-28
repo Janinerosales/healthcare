@@ -21,6 +21,7 @@ class statusController extends Controller
         $appointments = Appointment::with('user', 'profile', 'doctor', 'prescription')->simplePaginate(5);
 
         $doctors = Doctor::get();
+        // dd($appointments);
 
         foreach ($appointments as $appointment) {
             $appointment->appointment_date = Carbon::parse($appointment->appointment_date)->isoFormat('MMMM DD, YYYY');

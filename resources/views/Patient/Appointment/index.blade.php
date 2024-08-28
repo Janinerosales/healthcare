@@ -27,6 +27,9 @@
       });
   });
 </script>
+@php
+  use App\Models\Profile;
+@endphp
 <div class="col-lg-12 d-flex align-items-stretch">
   <div class="card w-100">
     <div class="card-body p-4">
@@ -71,8 +74,14 @@
               <td class="border-bottom-0">
                 <p class="mb-0 fw-normal">{{$appointment->requests}}</p>
               </td>
+              @php
+            
+
+                  $doctor = Profile::find($appointment->doctor_id)->full_name ?? 'Not Assigned Yet';
+              // dump($doctor);
+              @endphp
               <td class="border-bottom-0">
-                <p class="mb-0 fw-normal">{{$appointment->doctor->full_name ?? 'Not Assigned Yet'}}</p>
+                <p class="mb-0 fw-normal">{{$doctor ?? 'Not Assigned Yet'}}</p>
               </td>
               <td class="border-bottom-0">
                 <div class="d-flex flex-wrap">

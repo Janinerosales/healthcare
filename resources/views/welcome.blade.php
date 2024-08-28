@@ -38,6 +38,7 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
+    
     <!-- Spinner End -->
 
     <!-- Topbar Start -->
@@ -188,6 +189,7 @@
                                 <h1 class="display-1 text-white mb-4">HealthCare</h1>
                                 <p class="mb-5 fs-5">Caring for you, every step of the way. Your health, our priority.
                                 </p>
+                                
                                 <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
                                     <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="/login">Login</a>
                                     <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
@@ -199,6 +201,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Carousel End -->
 
   
