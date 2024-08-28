@@ -118,8 +118,11 @@
     }
   }
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+@php
+  use App\Models\Profile;
+@endphp
 <div class="col-lg-12 d-flex align-items-stretch">
   <div class="card w-100">
     <div class="card-body p-4">
@@ -164,8 +167,11 @@
               <td class="border-bottom-0">
                 <p class="mb-0 fw-normal">{{$appointment->requests}}</p>
               </td>
+              @php
+              $doctor =   $doctor = Profile::find($appointment->doctor_id)->full_name ?? 'Not Assigned Yet';
+              @endphp
               <td class="border-bottom-0">
-                <p class="mb-0 fw-normal">{{$appointment->doctor->full_name ?? ''}}</p>
+                <p class="mb-0 fw-normal">{{$doctor}}</p>
               </td>
               <td class="border-bottom-0">
                 <p class="mb-0 fw-normal">{{$user->name}}</p>

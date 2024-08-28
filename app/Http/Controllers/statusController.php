@@ -18,7 +18,7 @@ class statusController extends Controller
     public function index()
     {
         //
-        $appointments = Appointment::with('user', 'profile', 'doctor', 'prescription')->simplePaginate(5);
+        $appointments = Appointment::with('user', 'profile', 'doctor', 'prescription') ->orderByRaw("FIELD(status, 'Pending') DESC")->orderBy('status', 'asc')->simplePaginate(5) ;
 
         $doctors = Doctor::get();
         // dd($appointments);

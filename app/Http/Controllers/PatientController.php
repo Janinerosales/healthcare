@@ -65,7 +65,7 @@ class PatientController extends Controller
         // dd($id);
         $profiles = Profile::with('user')->findOrFail($id);
 
-        $appointments = Appointment::with('doctor')->where('profile_id', $id)->simplePaginate(5);
+        $appointments = Appointment::with('doctor')->where('profile_id', $id) ->orderByRaw("FIELD(status, 'Pending') DESC")->orderBy('status', 'asc')->simplePaginate(5);
 
         // dd($appointments);
         $user = $profiles->user;
