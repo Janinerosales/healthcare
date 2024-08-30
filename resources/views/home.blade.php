@@ -182,6 +182,15 @@
                 <span class="hide-menu">Medical Records</span>
               </a>
             </li>
+
+            <li class="sidebar-item">
+                  <a class="sidebar-link" href="{{route('user.index')}}" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-users"></i>
+                    </span>
+                    <span class="hide-menu">Fitness</span>
+                  </a>
+                </li>
           </ul>`;
           }
 
