@@ -17,7 +17,7 @@
       }).then(response => response.json())
       .then(response => {
         console.log(response);
-        const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
+        const userImage = response.profile_image ? response.profile_image : `{{asset('/images/profile_default.png')}}`;
         document.getElementById('userID').src = userImage;
         if (response.role_id == 2) {
           // document.querySelector('#admin').classList.add('d-block');
