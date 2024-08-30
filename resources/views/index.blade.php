@@ -18,9 +18,9 @@
       .then(response => {
         console.log(response);
         // const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
-        let userImage = 'storage/' + response.profile_image
+        let userImage =  response.profile_image
         if(userImage){
-          document.getElementById('userID').src = userImage;
+          document.getElementById('userID').src = 'storage/' + userImage;
         }else{
           document.getElementById('userID').src =  'images/profile_default.png';
         }

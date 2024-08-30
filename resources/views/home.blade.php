@@ -28,9 +28,9 @@
         }).then(response => response.json())
         .then(response => {
           let Uri = window.location.hostname;
-        let userImage = 'storage/' + response.profile_image
+        let userImage = response.profile_image
         if(userImage){
-          document.getElementById('userID').src = userImage;
+          document.getElementById('userID').src = 'storage/' + userImage;
         }else{
           document.getElementById('userID').src =  'images/profile_default.png';
         }

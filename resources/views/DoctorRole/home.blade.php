@@ -27,7 +27,7 @@
           }
         }).then(response => response.json())
         .then(response => {
-          let userImage = 'storage/' + response.profile_image
+          let userImage = response.profile_image
         if(userImage){
           document.getElementById('userID').src = userImage;
         }else{

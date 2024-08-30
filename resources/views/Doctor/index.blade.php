@@ -17,10 +17,10 @@
       }).then(response => response.json())
       .then(response => {
         console.log(response);
-        let userImage = 'storage/' + response.profile_image
+        let userImage =  response.profile_image
         if(userImage){
           //<img id="userID" width="35" height="35" class="rounded-circle">
-          document.getElementById('userID').innerHTML =`<img width="35" height="35" class="rounded-circle" src="${userImage}"/>` ;
+          document.getElementById('userID').innerHTML =`<img width="35" height="35" class="rounded-circle" src="storage/${userImage}"/>` ;
         }else{
           document.getElementById('userID').src =  'images/profile_default.png';
         }

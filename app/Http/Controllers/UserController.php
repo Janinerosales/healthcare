@@ -197,6 +197,10 @@ class UserController extends Controller
             // $data['profile_image'];
         }
 
+        $user->update([
+            'profile_image' => $data['profile_image'] ?? null,
+        ]);
+
         // if ($request['specialization']) {
         //     $data['specialization'] = $request['specialization'];
         // } else {
@@ -215,9 +219,7 @@ class UserController extends Controller
 
 
 
-        $user->update([
-            'profile_image' => $data['profile_image'] ?? null,
-        ]);
+       
         $profile->update($data);
 
         // dd($data);
