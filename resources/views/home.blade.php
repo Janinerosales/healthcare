@@ -317,7 +317,7 @@
               }
             }).then(response => response.json())
             .then(response => {
-              const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
+              const userImage = response.profile_image ? response.profile_image : 'https://healthcaremanagement.online/images/profile_default.png';
               document.getElementById('userID').src = userImage;
 
               // const userIlkmd = response.id;
