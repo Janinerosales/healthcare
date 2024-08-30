@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ByRoleController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\FitnessController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MedicalRecordsController;
 use App\Http\Controllers\PatientController;
@@ -88,3 +89,5 @@ Route::post('createAppointment', [HomeController::class, 'createAppointment'])->
 
 //////This is Doctor Role Side
 Route::get('/doctor-dashboard', [HomeController::class, 'doctorDashboard']);
+
+Route::get('/fitness', [FitnessController::class, 'index']);
