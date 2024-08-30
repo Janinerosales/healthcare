@@ -27,8 +27,12 @@
           }
         }).then(response => response.json())
         .then(response => {
-          const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
+          let userImage = 'storage/' + response.profile_image
+        if(userImage){
           document.getElementById('userID').src = userImage;
+        }else{
+          document.getElementById('userID').src =  'images/profile_default.png';
+        }
 
           // const userId = response.id;
 
@@ -211,30 +215,7 @@
       <script src="{{asset('dash_board/assets/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
       <script src="{{asset('dash_board/assets/libs/simplebar/dist/simplebar.js')}}"></script>
       <script src="{{asset('dash_board/assets/js/dashboard.js')}}"></script>
-      <script>
-        // const UserId = localStorage.getItem('id');
-        // console.log(userId);
-        document.addEventListener("DOMContentLoaded", function() {
-          fetch('/api/user', {
-              method: 'GET',
-              headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('TOKEN'),
-                Accept: 'application/json',
-              }
-            }).then(response => response.json())
-            .then(response => {
-              const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
-              document.getElementById('userID').src = userImage;
 
-              // const userIlkmd = response.id;
-
-              // Store user ID in localStorage
-              // localStorage.setItem('USER_ID', userId);
-
-              console.log(response);
-            });
-        });
-      </script>
       <script>
         function logout() {
           Swal.fire({

@@ -17,11 +17,20 @@
       }).then(response => response.json())
       .then(response => {
         console.log(response);
-        const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
-        document.getElementById('userID').src = userImage;
+        // const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
+        let userImage = 'storage/' + response.profile_image
+        if(userImage){
+          document.getElementById('userID').src = userImage;
+        }else{
+          document.getElementById('userID').src =  'images/profile_default.png';
+        }
+
         if (response.role_id == 2) {
           // document.querySelector('#admin').classList.add('d-block');
           window.location.href = '/patientRole/' + response.id;
+        }else if(response.role_id == 1){
+          document.querySelector('#admin').classList.remove('d-none');
+          document.querySelector('#Byroles').classList.add('d-none');
         }
         // console.log(response);
       });
@@ -204,32 +213,5 @@
 
   </div>
 </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const userId = localStorage.getItem('USER_ID');
-    console.log(userId);
-    fetch('/api/user', {
-        method: 'GET',
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('TOKEN'),
-          Accept: 'application/json',
-          body: JSON.stringify({
-            user_id: userId
-          })
-        }
 
-      }).then(response => response.json())
-      .then(response => {
-        console.log(response);
-        const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
-        document.getElementById('userID').src = userImage;
-        if (response.role_id == 1) {
-          // document.querySelector('#admin').classList.add('d-block');
-          document.querySelector('#admin').classList.remove('d-none');
-          document.querySelector('#Byroles').classList.add('d-none');
-        }
-        // console.log(response);
-      });
-  });
-</script>
 @endsection

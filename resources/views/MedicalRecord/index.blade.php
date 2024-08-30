@@ -17,8 +17,13 @@
       }).then(response => response.json())
       .then(response => {
         console.log(response);
-        const userImage = response.profile_image ? response.profile_image : 'images/profile_default.png';
-        document.getElementById('userID').src = userImage;
+        let userImage = 'storage/' + response.profile_image
+        if(userImage){
+          //<img id="userID" width="35" height="35" class="rounded-circle">
+          document.getElementById('userID').innerHTML =`<img width="35" height="35" class="rounded-circle" src="${userImage}"/>` ;
+        }else{
+          document.getElementById('userID').src =  'images/profile_default.png';
+        }
         if (response.role_id == 2) {
           // document.querySelector('#admin').classList.add('d-block');
           window.location.href = '/patientRole/' + response.id;
