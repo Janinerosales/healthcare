@@ -1,6 +1,10 @@
 @extends('home')
 @section('content')
 <script>
+  let baseUrl = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":" + window.location.port : "");
+
+console.log(baseUrl);  // Outputs: http://localhost:8000
+  // console.log(hostURL);
   document.addEventListener("DOMContentLoaded", function() {
     const userId = localStorage.getItem('USER_ID');
     console.log(userId);
@@ -20,7 +24,7 @@
         let userImage = response.profile_image
         if(userImage){
           //<img id="userID" width="35" height="35" class="rounded-circle">
-          document.getElementById('userID').innerHTML =`<img width="35" height="35" class="rounded-circle" src="storage/${userImage}"/>` ;
+          document.getElementById('userID').innerHTML =`<img width="35" height="35" class="rounded-circle" src="${baseUrl}/storage/${userImage}"/>` ;
         }else{
           document.getElementById('userID').src =  'images/profile_default.png';
         }

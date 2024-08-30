@@ -1,6 +1,7 @@
 @extends('home')
 @section('content')
 <script>
+  
   document.addEventListener("DOMContentLoaded", function() {
     const userId = localStorage.getItem('USER_ID');
     console.log(userId);
